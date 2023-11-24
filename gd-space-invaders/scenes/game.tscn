@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqkjg75ogf8rs"]
+
+[ext_resource type="PackedScene" uid="uid://dpjsejceqxmao" path="res://scenes/player.tscn" id="1_aj8yj"]
+[ext_resource type="PackedScene" uid="uid://gapv7fp054al" path="res://scenes/laser_trigger.tscn" id="2_pu4f4"]
+[ext_resource type="PackedScene" uid="uid://dvibn5ek5q4xf" path="res://scenes/menu.tscn" id="3_5ib3g"]
+[ext_resource type="PackedScene" uid="uid://co0b4psu8eve4" path="res://scenes/invaders_spawner.tscn" id="3_5xka4"]
+
+[node name="game" type="Node"]
+
+[node name="player" parent="." instance=ExtResource("1_aj8yj")]
+position = Vector2(0, 268)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="laserTrigger" parent="." instance=ExtResource("2_pu4f4")]
+position = Vector2(0, -248)
+
+[node name="laserTrigger2" parent="." instance=ExtResource("2_pu4f4")]
+position = Vector2(0, 296)
+scale = Vector2(1, 0.5)
+
+[node name="invadersSpawner" parent="." instance=ExtResource("3_5xka4")]
+
+[node name="start_screen" parent="." instance=ExtResource("3_5ib3g")]
+visible = false

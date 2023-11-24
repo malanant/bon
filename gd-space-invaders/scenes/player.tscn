@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpjsejceqxmao"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_23ssc"]
+[ext_resource type="Texture2D" uid="uid://dd26r5wvdqwym" path="res://assets/player/Player.png" id="2_pitap"]
+[ext_resource type="Script" path="res://scripts/shooting.gd" id="3_o82p0"]
+[ext_resource type="PackedScene" uid="uid://ds05we42duqjo" path="res://scenes/laser.tscn" id="4_pfdfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bjvd"]
+size = Vector2(40, 15.0005)
+
+[node name="player" type="Area2D"]
+script = ExtResource("1_23ssc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.894118, 0.2, 1)
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_pitap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.50025)
+shape = SubResource("RectangleShape2D_1bjvd")
+one_way_collision_margin = 0.0
+
+[node name="shooting" type="Node2D" parent="."]
+script = ExtResource("3_o82p0")
+laser_scene = ExtResource("4_pfdfs")
